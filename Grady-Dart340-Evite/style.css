@@ -1,0 +1,17 @@
+#evite {
+font-family: leander-script-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 25px;
+line-height: 0.8;
+text-align: center;
+}
+
+#rsvp {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+	font-size: 35px;
+}
