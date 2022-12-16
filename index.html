@@ -1,57 +1,193 @@
 <!DOCTYPE html>
 <html>
-    <head>
+ <head>
+        <title>Personality Quiz</title>
         <meta charset="UTF-8">
-        <title>Recipe Blog</title>
-        <link rel="stylesheet" href="style.css">
+	 <style> img {
+  width: 250px;
+  height: 200px;
+}</style>
+     
     </head>
-    <body>
-        <h1>Foodies!</h1>
-        <h2>For All Your Delicious Needs</h2>
-        <h3>Author: Isabelle Grady</h3>
     
-        <p>Hello everyone!  Today I'm going to be talking about three different recipes that you can make for yourself or for others to enjoy!</p>
+    <body>
+        <div id = "container">
+        <h1 id = "questions">First, which color stands out to you?</h1>
+        <div id="buttons">
+        <button id = "button1" type = "image"><img id="img1" src="pictures/gold.jfif" height="200px" width="250px"></button>
+        <button id = "button2" type = "image"><img id="img2" src ="pictures/blue.jfif" height = "200px" width="250px"></button>
+        <button id = "button3" type = "image"><img id="img3" src="pictures/red.jpg" height="200px" width="250px"></button>
+        <button id = "button4" type = "image"><img id="img4" src="pictures/green.jfif" height="200px" width="250px"></button>
+            </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         
-        <br>
-        <!-- Nav bar here-->
-        <ul class="navbar">
-            <li><a href="index.html">Appetiser</a></li>
-            <li><a href="blogpage2.html">Entree</a></li>
-            <li><a href="blogpage3.html">Dessert</a></li>
-        </ul>
-        <br>
+        <script>
+             
+             //The points system
+            let i = 0;
+            let addOnePoint = function () {
+                i++;
+                console.log(i);
+
+            };
+            let addTwoPoints = function () {
+                i+=2;
+                console.log(i);
+
+            };
+            let addThreePoints = function () {
+                i+=3;
+                console.log(i);
+
+            };
+            let addFourPoints = function() {
+                i+=4;
+                console.log(i)
+            }
+            $("#img1").on("click", addOnePoint);
+            $("#img2").on("click", addTwoPoints);
+            $("#img3").on("click", addThreePoints);
+            $("#img4").on("click", addFourPoints);
+            
+        //The Questions
+            let question2 = function() {
+                $("#questions").text("What animal would you like as a companion?");
+                $("#img1").attr("src", "pictures/ferret.png");
+                $("#img2").attr("src", "pictures/owl.jpg");
+                $("#img3").attr("src", "pictures/dog.jpg");
+                $("#img4").attr("src", "pictures/cat.jpg");
+                $("#buttons").on("click", question3);
+            }
+            
+            let question3 = function() {
+                $("#questions").text("Which wand would you prefer to have?");
+                $("#img1").attr("src", "pictures/cedric.jpg");
+                $("#img2").attr("src", "pictures/luna.jpg");
+                $("#img3").attr("src", "pictures/ron.jpg");
+                $("#img4").attr("src", "pictures/bellatrix.jpg");
+                $("#buttons").on("click", question4);
+            }
+            
+            let question4 = function() {
+                $("#questions").text("Who is your favorite professor?");
+                $("#img1").attr("src", "pictures/sprout.jpg");
+                $("#img2").attr("src", "pictures/sybill.jpg");
+                $("#img3").attr("src", "pictures/lupin.jpg");
+                $("#img4").attr("src", "pictures/slughorn.jpg");
+                $("#buttons").on("click", question5);
+            }
+            
+            let question5 = function() {
+                $("#questions").text("What is your favorite class?");
+                $("#img1").attr("src", "pictures/herb.jpg");
+                $("#img2").attr("src", "pictures/divination.jpg");
+                $("#img3").attr("src", "pictures/dada.jpg");
+                $("#img4").attr("src", "pictures/potions.png");
+                $("#buttons").on("click", question6);
+            }
+            
+            let question6 = function() {
+                $("#questions").text("Where do you like to study?");
+                $("#img1").attr("src", "pictures/greathall.jpg");
+                $("#img2").attr("src", "pictures/library.jpg");
+                $("#img3").attr("src", "pictures/hagrid.jpg");
+                $("#img4").attr("src", "pictures/dungeon.jpg");
+                $("#buttons").on("click", question7);
+            }
+             let question7 = function() {
+                $("#questions").text("What do you like to do in your free time?");
+                $("#img1").attr("src", "pictures/honeydukes.jpg");
+                $("#img2").attr("src", "pictures/hogsmeade.jpg");
+                $("#img3").attr("src", "pictures/wizards-chess.jpg");
+                $("#img4").attr("src", "pictures/shriekingshack.jpg");
+                $("#buttons").on("click", question8);
+            }
+             
+             let question8 = function() {
+                $("#questions").text("Congrats! You got to be picked for a Quidditch team! Pick your position!");
+                $("#img1").attr("src", "pictures/keeper.jpg");
+                $("#img2").attr("src", "pictures/chaser.jpg");
+                $("#img3").attr("src", "pictures/seeker.jpg");
+                $("#img4").attr("src", "pictures/beater.jpg");
+                $("#buttons").on("click", question9);
+            }
+             
+             let question9 = function() {
+                $("#questions").text("Quick! Choose a broomstick to start playing!");
+                 $("#img1").attr("src", "pictures/comet-260.png");
+                 $("#img2").attr("src", "pictures/nimbus-2000.jfif");
+                 $("#img3").attr("src", "pictures/firebolt.jpg");
+                 $("#img4").attr("src", "pictures/nimbus-2001.jpg");
+                 $("#buttons").on("click", question10);
+            }
+              let question10 = function() {
+                $("#questions").text("Great game! Where are you going to celebrate?");
+                  $("#img1").attr("src", "pictures/leaky-cauldron.jpg");
+                  $("#img2").attr("src", "pictures/hogwarts-quidditch-stadium.jpg");
+                  $("#img3").attr("src", "pictures/the-burrow.jpg");
+                  $("#img4").attr("src", "pictures/hangleton-graveyard.jpg");
+                  $("#buttons").on("click", $finalScene);
+            }
+           
+            //The different results
+            let result1 = $("<div>");
+            result1.html("<h1> You're a Hufflepuff!</h1>" + "<p>Students belonging to this house were known to be hard-working, friendly, loyal, honest and rather impartial. It might be that due to their values, Hufflepuffs were not as competitive as the other houses, and were more modest about their accomplishments. Hufflepuff was the most inclusive among the four houses; valuing hard work, dedication, patience, loyalty, and fair play rather than a particular aptitude in its students.  Hufflepuffs were known to have a strong moral code, and a sense of right and wrong. Hufflepuffs were usually accepting of everyone. Students in Hufflepuff were known to value everyone and treat them as equal.</p>");
+            let image1=$("<img>");
+            image1.attr("src", "pictures/hufflepuff.jpg");
+            
+            let result2 = $("<div>");
+            result2.html("<h1> You're a Ravenclaw!</h1>" + "<p> Ravenclaw House prized learning, wisdom, wit, and intellect in its members. Thus, many Ravenclaws tended to be academically motivated and talented students. They also prided themselves on being original in their ideas, and methods. It was not unusual to find Ravenclaw students practising especially different types of magic that other houses might shun. Hermione Granger, an extremely intelligent witch and the top student in her year, was sorted into Gryffindor, though she admitted that the Sorting Hat had seriously considered placing her in Ravenclaw. Often hard-working and diligent, as often was the case with intellectuals with a predisposition for academics, some of the pupils sorted under the blue-bronzed eagle were known to be inclined to dismiss certain social expectations for the sake of satisfying their own intellectual curiosity. Some of these eventually also ended up being not only accepted but even celebrated, in spite of being initially subjected to scorn for their various oddities. </p>");
+            let image2=$("<img>");
+            image2.attr("src", "pictures/ravenclaw.jfif");
+            
+            let result3 = $("<div>");
+			result3.html("<h1> You're a Gryffindor!</h1>" + "<p>The Gryffindor house emphasised the traits of courage as well as <em>daring, nerve, and chivalry</em>, and thus its members were generally regarded as brave, though sometimes to the point of recklessness. Some Gryffindors had also been noted to be short-tempered. Notably, Gryffindor house contributed many members to Dumbledore's Army and the Order of the Phoenix, although this may have been because the main members made it a point not to associate with other houses. According to Phineas Nigellus Black, members of other houses, particularly Slytherin, sometimes felt that Gryffindors engaged in <em>pointless heroics</em>. Another Slytherin, Severus Snape, considered many Gryffindors to be self-righteous and arrogant, with no regard for rules. </p>");
+            let image3=$("<img>");
+            image3.attr("src", "pictures/gryffindor.jpg");
+            
+            let result4 = $("<div>");
+            result4.html("<h1> You're a Slytherin!</h1>" + "<p> Slytherins tended to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented. They also had highly developed senses of self-preservation. This means that Slytherins tended to hesitate before acting, so as to weigh all possible outcomes before deciding exactly what should be done. Slytherins tended to take charge and possessed strong leadership skills. They were often self-assured and confident of their own competence and can be very loyal. Another characteristic some Slytherins share was a tendency towards deep, unrequited love.  Although some Slytherins, such as Tom Riddle, were incapable of feeling love at all, those that did were known to cherish their passion abidingly and unconditionally, although often tragically due to an inability to act appropriately on their feelings. The Sorting Hat claimed that blood purity was a factor in selecting Slytherins. It was not the main factor, but it suggests that the Sorting Hat took into account the lineage of the student as well as traits. Muggle-born Slytherins existed, but were very rare, as noted insultingly by Scabior the Snatcher. </p>");
+            let image4=$("<img>");
+            image4.attr("src", "pictures/slytherin.jpg");
+            
+            let $finalScene = function () {
+                
+                $("#container").empty();
+                
+                if (i>=10 && i<=19) {
+                    $("#container").append(result1);
+                    $("#container").append(image1);
+                }
+				
+				if (i>=20 && i<=29) {
+					$("#container").append(result2);
+					$("#container").append(image2);
+				}
+				
+				if (i>=30 && i<=39) {
+					$("#container").append(result3);
+					$("#container").append(image3);
+				}
+				
+				if (i>=40) {
+					$("#container").append(result4);
+					$("#container").append(image4);
+				}
+            }
+            
+           
+            
+            
+       
+              
         
-        <h1>1st Recipe: Tomato Mozzarella Skewers</h1>
-        <h2>What you will need:</h2>
-        
-            <ul>
-                <li>8oz container of fresh mozzarella pearls</li>
-                <li>1 container of grape or cherry tomatoes</li>
-                <li>Fresh basil leaves</li>
-                <li>Balsamic Vinagrette</li>
-            </ul>
-        <h2>Step-By-Step:</h2>
-            <ul>
-                <li>Skewer tomato, basil leaf, and mozzarella ball on toothpick</li>
-                <li>Arrange on plate</li>
-                <li>Drizzle with balsamic vinagrette</li>
-        
-            </ul>
-           <table class="imageGallery">
-            <thead>
-                <tr>
-                  Different Arrangements
-                </tr>
-            </thead>
-               <br>
-            <tbody>
-                <tr>
-                    <td><img src ="caprese-salad-skewers-app-min.jpg" width=100px></td>
-                    <td><img src="55091562725f4-tomato-mozzarella-bites-recipe-ghk1212-xln.jpg" width=100px></td>
-                    <td><img src="skewerplate.jfif"></td>
-                </tr>
-               </tbody>
-        </table>
+        $("#buttons").on("click", question2);  
+        </script>
+    
     </body>
+
+
+
 
 </html>
